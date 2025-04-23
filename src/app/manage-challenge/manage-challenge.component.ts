@@ -6,6 +6,7 @@ import { Firestore } from '@angular/fire/firestore';
   selector: 'fsc-manage-challenge',
   imports: [],
   templateUrl: './manage-challenge.component.html',
+  standalone: true,
   styleUrl: './manage-challenge.component.scss'
 })
 export class ManageChallengeComponent implements OnInit {
