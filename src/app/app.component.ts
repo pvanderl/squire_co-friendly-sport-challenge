@@ -6,6 +6,7 @@ import { ManageChallengeComponent } from './manage-challenge/manage-challenge.co
   selector: 'fsc-root',
   imports: [RouterOutlet, ManageChallengeComponent],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {

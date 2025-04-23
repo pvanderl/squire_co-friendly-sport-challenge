@@ -1,0 +1,10 @@
+<form [formGroup]="activity">
+  <mat-form-field>
+    <mat-label>Sport</mat-label>
+    <mat-select formControlName="selection" placeholder="Course à pied">
+      @for (sport of sports; track sport) {
+        <mat-option [value]="sport.name">{{ sport.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>
