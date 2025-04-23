@@ -4,7 +4,7 @@ import { ManageChallengeComponent } from './manage-challenge/manage-challenge.co
 
 @Component({
   selector: 'fsc-root',
-  imports: [RouterOutlet, ManageChallengeComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
