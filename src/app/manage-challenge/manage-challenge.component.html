@@ -1,18 +1,25 @@
 <h3>{{ challenge?.name }}</h3>
 <p>{{ challenge?.description }}</p>
-<p>Start Date: {{ challenge?.startDate?.toDate() | date }}</p>
-<p>End Date: {{ challenge?.endDate?.toDate() | date }}</p>
+<p>{{ challenge?.startDate?.toDate() | date }} -  {{ challenge?.endDate?.toDate() | date }}</p>
 <!-- list of participant with their VO2Max -->
 <table mat-table [dataSource]="participants" matSort>
   <ng-container matColumnDef="name">
-    <th *matHeaderCellDef mat-header-cell> Name</th>
+    <th *matHeaderCellDef mat-header-cell>Name</th>
     <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
   </ng-container>
 
   <ng-container matColumnDef="vo2max">
-    <th *matHeaderCellDef mat-header-cell> VO2Max</th>
-    <td *matCellDef="let element" mat-cell> {{ element.vo2Max }}</td>
+    <th *matHeaderCellDef mat-header-cell>VO2Max</th>
+    <td *matCellDef="let element" mat-cell> {{ element['vo2max'] }}</td>
   </ng-container>
 
   <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
   <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+</table>
+
+
+
+
+<button (click)="openDialog()" class="fab" mat-mini-fab>
+  <mat-icon>add</mat-icon>
+</button>

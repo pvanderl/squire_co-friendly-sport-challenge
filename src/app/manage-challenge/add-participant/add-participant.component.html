@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Nouveau participant</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input id="name" matInput type="text"
+           [(ngModel)]="data.name"/>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>vo2max</mat-label>
+    <input id="name" matInput type="number"
+           [(ngModel)]="data.vo2max"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button (click)="onNoClick()" mat-button>Cancel</button>
+  <button [mat-dialog-close]="onClose()" cdkFocusInitial mat-button>Add</button>
+</mat-dialog-actions>
