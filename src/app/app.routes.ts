@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
+import { UploadComponent } from './upload/upload.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,10 @@ export const routes: Routes = [
       import('./manage-challenge/manage-challenge.component').then(
         (m) => m.ManageChallengeComponent
       ),
+  },
+  {
+    path: 'upload',
+    component: UploadComponent
   },
   {
     path: '**',

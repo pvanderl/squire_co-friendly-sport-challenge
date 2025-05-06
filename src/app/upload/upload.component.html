@@ -1,0 +1,22 @@
+<h2>Upload</h2>
+@if (!file) {
+  <button type="button" mat-raised-button (click)="fileInput.click()">Choisir un ficher</button>
+  <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" accept=".csv">
+} @else {
+  <p>Fichier sélectionné: {{ file.name }}</p>
+  <p>Nombre d'entrées {{ fileLines.length }}</p>
+  @if (step === 1) {
+    <p>Parsing in progress</p>
+  }
+  @else if (step === 2) {
+    <p>Saving in progress</p>
+  }
+  @if (step !== 0) {
+    <mat-progress-bar
+      class="example-margin"
+      [mode]="progressBarMode"
+      [value]="(done / fileLines.length) * 100"
+    >
+    </mat-progress-bar>
+  }
+}

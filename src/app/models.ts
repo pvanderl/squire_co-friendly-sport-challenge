@@ -1,5 +1,6 @@
 export const PATH_CHALLENGE = 'challenges';
 export const PATH_MEMBERS = 'members';
+export const PATH_WEEKS = 'weeks';
 export const PATH_ACTIVITIES = 'activities';
 
 interface TimeStamp extends Date {
@@ -24,8 +25,8 @@ export interface Participant {
 
 export interface Activity {
   selection: string[];
-  date: string;
+  date: string | Date;
   duration: number; // in seconds
-  METs: number; // Metabolic Equivalent of Task
-  memberUid: string;
+  points: number; // Metabolic Equivalent of Task
+  participantUid: string;
 }
