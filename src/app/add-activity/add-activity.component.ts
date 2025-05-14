@@ -10,7 +10,7 @@ import { Challenge } from '../models';
   styleUrl: './add-activity.component.scss'
 })
 export class AddActivityComponent implements OnInit {
-  private challenge?: Challenge;
+  protected challenge?: Challenge;
 
 
   constructor(
