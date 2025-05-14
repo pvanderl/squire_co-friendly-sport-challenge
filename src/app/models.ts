@@ -15,6 +15,7 @@ export interface Challenge {
   description: string;
   startDate: TimeStamp;
   endDate: TimeStamp;
+  members?: Participant[];
 }
 
 export interface Participant {

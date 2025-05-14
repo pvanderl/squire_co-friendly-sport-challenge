@@ -15,12 +15,19 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'add-activity/:id',
+    loadComponent: () =>
+      import('./add-activity/add-activity.component').then(
+        (m) => m.AddActivityComponent
+      ),
+  },
+  {
     path: 'upload',
     component: UploadComponent
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'manage/0JXXQf3kuKwQYZhNpxH3',
+    redirectTo: 'add-activity/0JXXQf3kuKwQYZhNpxH3',
   }
 ];
