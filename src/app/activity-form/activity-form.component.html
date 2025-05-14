@@ -1,10 +1,27 @@
 <form [formGroup]="activity">
   <mat-form-field>
+    <mat-label>User</mat-label>
+    <input matInput formControlName="memberUid" [value]="cachedUsername">
+  </mat-form-field>
+  <mat-form-field>
     <mat-label>Sport</mat-label>
-    <mat-select formControlName="selection" placeholder="Course à pied">
+    <mat-select formControlName="sport">
       @for (sport of sports; track sport) {
         <mat-option [value]="sport.name">{{ sport.name }}</mat-option>
       }
     </mat-select>
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Duration</mat-label>
+    <input matInput formControlName="duration">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-button (click)="onsubmit()">Submit</button>
 </form>
