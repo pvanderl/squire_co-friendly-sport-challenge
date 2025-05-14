@@ -17,7 +17,6 @@ import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR, Reacti
   ]
 })
 export class TimeInputComponent implements ControlValueAccessor {
-  private disabled: boolean = false;
 
   formGroup = new FormGroup({
     hours: new FormControl(0),
@@ -59,7 +58,11 @@ export class TimeInputComponent implements ControlValueAccessor {
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled = isDisabled;
+    if (isDisabled) {
+      this.formGroup.disable();
+    } else {
+      this.formGroup.enable();
+    }
   }
 
 }
